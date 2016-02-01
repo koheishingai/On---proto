@@ -1,0 +1,693 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100);
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+@import url(http://netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css);
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    cursor: default;
+}
+
+html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+body {
+    background: #000 url("../images/background.jpg") no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    height: calc(100% - 15px);
+    overflow: hidden;
+}
+
+body.show{
+    background: #000 url("../images/hakata.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+#splash .container {
+    position: relative;
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+#splash .logo {
+    width: 190px;
+}
+
+#splash .sub {
+    font-weight: 100;
+    font-family: "Roboto", sans-serif;
+    opacity: .75;
+    margin: -4px 0;
+    font-size: 12px;
+}
+
+#splash h1 {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 87px;
+    overflow: hidden;
+    color: white;
+    opacity: 1;
+    z-index: 1;
+    display: block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 112px;
+    line-height: 80px;
+    font-family: "Roboto", sans-serif;
+}
+#splash .video-cta {}
+.login-wrap {
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -92px;
+    margin-top: -20px;
+    opacity: 1;
+}
+.main-wrap {
+    display: none;
+}
+body.login .login-wrap {
+    display: none;
+}
+body.login .main-wrap {
+    display: block;
+}
+#menu {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    margin-top: -12px;
+    left: -8px;
+    background: url(../images/three.svg);
+    background-size: cover;
+    opacity: 1;
+    z-index: 3;
+}
+.modal-menu{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    margin-top: -20px;
+    left: 0px;
+    background: url(../images/three2.svg);
+    background-size: cover;
+    opacity: 1;
+    z-index: 3;
+    opacity: .65;
+}
+.menu {
+    position: absolute;
+    width: 88px;
+    height: 88px;
+    background: transparent;
+    border-radius: 100px;
+    color: white;
+    border: 2px solid white;
+    line-height: 138px;
+    font-size: 55px;
+    font-weight: 100;
+    font-family: "Roboto", sans-serif;
+    display: none;
+}
+
+body.show .menu {
+    display: block;
+}
+html.side{
+  transform: translateX(272px);
+}
+html.side #menu {
+  /*transform: rotateZ(180deg);*/
+  margin-left: 3px;
+}
+.menu-wrap {
+    position: fixed;
+    z-index: -1;
+    height: 100%;
+    width: 272px;
+    left: -272px;
+    top: 0px;
+    background: #fff;
+    overflow-y: auto;
+}
+.prof-image {
+    position: absolute;
+    width: 82px;
+    height: 82px;
+    background-color: rgba(0, 0, 0, 0.11);
+    border-radius: 300px;
+    left: 50%;
+    margin-left: -41px;
+    top: 20px;
+    box-shadow: 0px 1px 4px rgba(0,0,0, 0.17);
+}
+.favorite {
+    position: absolute;
+    width: 82px;
+    height: 82px;
+    background-color: rgba(226, 94, 94, 0.78);
+    background-image: url(../images/heart.svg);
+    background-repeat: no-repeat;
+    background-position: 18px 19px;
+    background-size: 60%;
+    border-radius: 300px;
+    left: 50%;
+    margin-left: -41px;
+    top: 142px;
+    box-shadow: 0px 1px 4px rgba(0,0,0, 0.17);
+}
+.history{
+    position: absolute;
+    width: 82px;
+    height: 82px;
+    background-color: rgba(0, 0, 0, 0.11);
+    background-image: url(../images/history.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 300px;
+    left: 50%;
+    margin-left: -41px;
+    top: 264px;
+    box-shadow: 0px 1px 4px rgba(0,0,0, 0.17);
+}
+.setting{
+    position: absolute;
+    width: 82px;
+    height: 82px;
+    background-color: rgba(0, 0, 0, 0.11);
+    background-image: url(../images/gear.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 300px;
+    left: 50%;
+    margin-left: -41px;
+    top: 385px;
+    box-shadow: 0px 1px 4px rgba(0,0,0, 0.17);
+    margin-bottom: 94px;
+}
+.prof-image > p.name, .setting > p.name, .history > p.name, .favorite > p.name {
+    color: rgba(105, 105, 105, 0.89);
+    position: absolute;
+    bottom: -35px;
+    font-size: 12px;
+    width: 100%;
+    font-weight: 300;
+    font-family: "Roboto", sans-serif;
+}
+.wraps p.name {
+    color: rgba(146, 146, 146, 0.82);
+    position: absolute;
+    bottom: -35px;
+    font-size: 12px;
+    width: 100%;
+    font-weight: 300;
+    font-family: "Roboto", sans-serif;
+}
+
+.menu-wrap .logout {
+    width: 100%;
+    height: 50px;
+    bottom: 0px;
+    position: fixed;
+    border-top: 1px solid #eee;
+    background: #fafafa;
+    font-size: 14px;
+    font-weight: 300;
+    width: 272px;
+    font-family: "Roboto", sans-serif;
+    color: rgba(105, 105, 105, 0.49);
+    line-height: 48px;
+}
+.m1 {
+    transform: translateY(-250%);
+    margin-top: -6px;
+}
+
+.m2 {
+    transform: translateY(50%);
+    margin-top: -6px;
+}
+
+.m3 {
+    margin-top: -6px;
+    transform: translateY(-100%) translateX(-150%);
+    border-color: transparent;
+    opacity: 0;
+}
+
+.m4 {
+    margin-top: -6px;
+    transform: translateY(-100%) translateX(150%) rotateZ(180deg);
+    border-color: transparent;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: calc(100% - 40px);
+    opacity: .73;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+div.mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: rgba(0,0,0,.42);
+    z-index: -1;
+}
+div.mask-main {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: rgb(19, 19, 19);
+    z-index: 2;
+    display: none;
+}
+html.side div.mask-main{
+    display: block;
+}
+
+p.date {
+    margin: 0;
+    position: absolute;
+    width: 120px;
+    font-weight: 100;
+    font-size: 11px;
+    margin-left: -12px;
+    text-align: center;
+    opacity: .855;
+    font-weight: 300;
+    font-family: "Roboto", sans-serif;
+}
+
+body.show p.date {
+    opacity: 0;
+}
+
+body.show #Triangle-1 {
+  display: none;
+}
+
+body.show .logo {
+  display: none;
+}
+
+body.show .sub {
+  display: none;
+}
+
+body.show .help {
+  display: none;
+}
+
+.title {
+  display: none;
+}
+
+body.show .title {
+  display: block;
+}
+
+.mask {
+  display: none;
+}
+
+body.show .mask {
+  display: block;
+}
+
+.face {
+    opacity: 0.87;
+    width: 46px;
+    height: 56px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    margin-left: 21px;
+    margin-top: 15px;
+}
+
+.heart {
+    width: 51px;
+    height: 51px;
+    margin-top: 19px;
+    margin-left: 17px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+}
+
+#cross {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    margin-top: 26px;
+    margin-left: 26px;
+    width: 38px;
+    display: none;
+}
+
+body.show #cross {
+    display: block;
+}
+
+#splash.happy .m5 {
+    transform: translateY(-250%);
+    margin-top: -6px;
+}
+
+#splash .m5 {
+    transform: translateY(50%);
+    margin-top: -6px;
+}
+
+#splash.angry .m5 {
+    margin-top: -6px;
+    transform: translateY(-100%) translateX(-150%);
+}
+
+#splash.fun .m5 {
+    margin-top: -6px;
+    transform: translateY(-100%) translateX(150%);
+}
+
+body.happy .m1, body.sad .m2, body.angry .m3, body.fun .m4 {
+    transform: translateY(-100%);
+    margin-top: -6px;
+}
+
+.hide {
+  display: none;
+}
+.button {
+    background: none;
+    position: relative;
+    outline: 1px dashed rgba(255,255,255,0.56);
+    display: block;
+    float: left;
+    height: 40px;
+    margin: 0 5px;
+    overflow: hidden;
+    width: 174px;
+    border-radius: 0px;
+    -o-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+}
+.icon {
+    display: block;
+    float: left;
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    vertical-align: top;
+    width: 38px;
+    -moz-border-radius-topleft: 0px;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    border-radius: 0px 0px 0px 0px;
+    text-align: center;
+}
+.google .icon, .google .slide {
+    background: #d24228;
+}
+[class^="icon-"], [class*=" icon-"] {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    display: inline;
+    width: auto;
+    height: auto;
+    line-height: normal;
+    vertical-align: baseline;
+    background-image: none!important;
+    background-position: 0 0;
+    background-repeat: repeat;
+}
+.icon i {
+    color: #fff;
+    line-height: 42px;
+    opacity: .65;
+}
+.slide {
+    z-index: 2;
+    display: block;
+    margin: 0;
+    height: 100%;
+    left: 38px;
+    position: absolute;
+    width: 136px;
+    -moz-border-radius-topleft: 0px;
+    -moz-border-radius-topright: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    border-radius: 0px 0px 0px 0px;
+}
+.button .slide {
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.google .icon, .google .slide {
+    background: none;
+    position: absolute;
+    top: 0px;
+    z-index: 0;
+}
+.slide p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    border-left: 1px solid #fff;
+    border-left: 1px solid rgba(255,255,255,0.35);
+    color: #fff;
+    font-size: 16px;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    top: 11px;
+    width: 100%;
+    opacity: .83;
+    line-height: 20px;
+}
+.facebook .icon, .facebook .slide {
+    background: none;
+    position: absolute;
+    top: 0px;
+    z-index: 0;
+}
+.g-signin2{
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0 !important;
+    position: absolute;
+    z-index: 1;
+}
+.abcRioButtonBlue{
+  width: 100% !important;
+  height: 100% !important;
+}
+.fb_iframe_widget{
+  cursor: default;
+  transform: scale(4);
+  opacity: 0;
+  position: absolute;
+  z-index: 1;
+}
+.favorite-wrap, .history-wrap, .setting-wrap{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: -272px;
+    background: white;
+    z-index: 1000;
+    display: none;
+}
+body.on-favorite .favorite-wrap{
+    display: block;
+}
+body.on-history .history-wrap{
+    display: block;
+}
+body.on-setting .setting-wrap{
+    display: block;
+}
+.modal-title{
+    font-size: 17px !important;
+    width: 100%;
+    color: #A0A0A0 !important;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100 !important;
+    height: 39px !important;
+    line-height: 30px !important;
+    margin-top: 7px !important;
+    text-align: center !important;
+    border-bottom: 1px solid #eee;
+}
+.wraps .content{
+position: absolute;
+    width: calc(100% - 22px);
+    top: 46px;
+    height: calc(100% - 40px);
+    right: 0px;
+}
+.wraps .content h2{
+    color: #949494;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100 !important;
+    font-size: 15px;
+    text-align: right;
+    margin-right: 10px;
+    border-bottom: 1px dashed #eaeaea;
+    height: 28px;
+    line-height: 28px;
+}
+.wraps .content span{
+    float: left;
+    color: #CECECE;
+    font-size: 11px;
+    font-family: "Roboto", sans-serif;
+    line-height: 29px;
+    text-indent: 4px;
+}
+.wraps .ctg{
+    width: 169px;
+    height: 169px;
+    float: left;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.wraps .ctg .icon {
+    width: 119px;
+    height: 119px;
+    border-radius: 300px;
+    border: 2px solid #E2E2E2;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+.wraps .ctg .icon.weather {
+        background: url('../images/weather2.svg');
+    background-repeat: no-repeat;
+    background-size: 75px;
+    background-position: 20px 18px;
+}
+.wraps .ctg .icon.science {
+        background: url('../images/science2.svg');
+    background-repeat: no-repeat;
+    background-size: 75px;
+    background-position: 20px 18px;
+}
+.wraps .ctg .icon.happy {
+    background: url('../images/happy2.svg');
+    background-repeat: no-repeat;
+    background-size: 75px;
+    background-position: 20px 18px;
+}
+.wraps .ctg .icon.sad {
+    background: url('../images/sad2.svg');
+    background-repeat: no-repeat;
+    background-size: 75px;
+    background-position: 20px 18px;
+}
+.wraps .ctg.r1 .icon {
+  background-color: rgba(232, 64, 64, .333);
+}
+.wraps .ctg.r1.r2 .icon {
+  background-color: rgba(232, 64, 64, .666);
+}
+.wraps .ctg.r1.r2.r3 .icon {
+  background-color: rgb(232, 64, 64);
+}
+.abcRioButtonContents {
+    font-weight: 100 !important;
+    font-family: "Roboto", sans-serif !important;
+}
+.logo-play {
+    top: 50% !important;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+    cursor: default;
+    z-index: 1;
+}
+div.switch {
+    top: 50% !important;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    z-index: 2;
+    background: white;
+    left: 50%;
+    border-radius: 300px;
+    margin-left: -21px;
+    margin-top: -8px;
+}
+.video-cta.play div.switch {
+    transition: transform, 0.3s, ease-in;
+    transform: translateX(26px);
+}
+@media only screen and (max-width: 600px) {
+  #splash .container {
+      min-height: 480px;
+  }
+  #splash h1 {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-device-width: 480px) and (min-device-width: 320px) {
+  body {
+      font-size: 1em;
+  }
+}
+@media (max-width: 43.75em) {
+  .ctg-fix{
+    transform: translateY(-25px);
+  }
+  .button {
+    /* float: none; */
+  }
+  .facebook.button {
+    /* margin-top: 6px; */
+  }
+  #splash .login-wrap {
+    /* height: 86px;
+    margin-left: -92px;
+    margin-top: -43px; */
+  }
+}

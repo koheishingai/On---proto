@@ -1,0 +1,118 @@
+doctype html
+html
+  head
+    title De-vision Proto1
+    meta(charset="utf8")
+    meta(content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no', name='viewport', user-scalable='no')
+    meta(name='google-signin-scope', content='profile email')
+    meta(name='google-signin-client_id', content='708405754046-6tc7l8878g1qcbdd8ltm1rihjs960nen.apps.googleusercontent.com')
+    link(rel="stylesheet" type="text/css" href="./styles/main.css")
+    script(src='https://apis.google.com/js/platform.js', async='', defer='')
+  body#splash.login
+    div.container
+      // img.logo(src="./images/logo.png")
+      // p.sub Artistic Transition
+      div.login-wrap
+        .google.button
+          .g-signin2(data-onsuccess='onSignIn', data-theme='dark')
+          i.icon
+            i.icon-google-plus
+          .slide
+            p
+              | Sign in
+        // .facebook.button
+          // fb:login-button(scope='public_profile,email', onlogin='checkLoginState();')
+          i.icon
+            i.icon-facebook
+          .slide
+            p
+              | facebook
+      div.main-wrap
+        #menu
+        div.video-cta
+          img.logo-play.fade.swt(src='https://cdn.rawgit.com/koheishingai/on/master/public/images/switch.svg')
+          .switch.swt
+          div.menu.m1
+            img.face(src="./images/three3.svg")
+          // div.menu.m2
+            img.face(src="./images/sad.svg")
+          div.menu.m3
+            img.face(src="./images/left.svg")
+          div.menu.m4
+            img.face(src="./images/left.svg")
+          div.menu.m5
+            img.heart(src="./images/heart.svg")
+          // p.date 2016年1月17日
+        .menu-wrap
+          .prof-image
+            p.name On
+          .favorite
+            p.name Favorite
+          .history
+            p.name History
+          .setting
+            p.name Settings
+          .logout(onclick="signOut();") Sign in
+      div.hide
+        // .g-signin2(data-onsuccess='onSignIn', data-theme='dark')
+        // fb:login-button(scope='public_profile,email', onlogin='checkLoginState();')
+        #status
+      footer
+        // p.help How to Use
+        p.title 記録的寒さ 博多氷点下4.4度
+      div.mask-main
+      div.mask
+    div.favorite-wrap.wraps
+      .modal-menu
+      h1.modal-title お気に入り
+      .content
+        section.s01
+          span 2016/1/25
+          h2 記録的寒さ 博多氷点下4.4度
+        section.s02
+          span 2016/1/25
+          h2 IT企業の自動車開発 想定以上
+    div.history-wrap.wraps
+      .modal-menu
+      h1.modal-title 再生履歴
+      .content
+    div.setting-wrap.wraps
+      .modal-menu
+      h1.modal-title 再生設定
+      .content
+        .ctg.c01
+          .icon.weather
+            p.name 天気
+        .ctg.c02
+          .icon.science
+            p.name 科学
+        .ctg.c03.ctg-fix
+          .icon.happy
+            p.name 嬉しい
+        .ctg.c03.ctg-fix
+          .icon.sad
+            p.name 悲しい
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
+  script(src="./scripts/main.js")
+  script.
+    function onSignIn(googleUser) {
+    // Useful data for your client-side scripts:
+    var profile = googleUser.getBasicProfile();
+    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+    console.log("Name: " + profile.getName());
+    console.log("Image URL: " + profile.getImageUrl());
+    console.log("Email: " + profile.getEmail());
+    // The ID token you need to pass to your backend:
+    var id_token = googleUser.getAuthResponse().id_token;
+    console.log("ID Token: " + id_token);
+    $('.prof-image').css('background', 'url('+ profile.getImageUrl() +') no-repeat center center').css('background-size', 'cover');
+    $('.prof-image > p.name').text(profile.getName());
+    $('body').addClass('login');
+    };
+    function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+    console.log('User signed out.');
+    location.reload();
+    });
+    }

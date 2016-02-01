@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    title
+    meta(charset="utf8")
+    meta(content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no', name='viewport', user-scalable='no')
+    link(rel="stylesheet" type="text/css" href="./styles/main.css")
+  body#splash
+    div.container
+      img.logo(src="./images/logo.png")
+      p.sub 見ないでみるニュース
+      div.video-cta
+        svg.playbutton(width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns")
+          g#Page-1(stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage")
+            g#vanity-google-store-copy(sketch:type="MSArtboardGroup" transform="translate(-657.000000, -354.000000)")
+              g#playbutton(sketch:type="MSLayerGroup" transform="translate(658.000000, 355.000000)")
+                circle#playstroke(stroke="#FFFFFF" stroke-width="2" fill-opacity="0.2" fill="#000000" sketch:type="MSShapeGroup" cx="43" cy="43" r="43")
+                polygon#Triangle-1(fill="#FFFFFF" sketch:type="MSShapeGroup" transform="translate(47.000000, 43.000000) rotate(90.000000) translate(-47.000000, -43.000000) " points="47 29 61 57 33 57 ")
+          img#cross(src="./images/cross.svg")
+        div.menu.m1
+          img.face(src="./images/happy.svg")
+        div.menu.m2
+          img.face(src="./images/sad.svg")
+        div.menu.m3
+          img.face(src="./images/angry.svg")
+        div.menu.m4
+          img.face(src="./images/fun.svg")
+        div.menu.m5
+          img.heart(src="./images/heart.svg")
+        p.date 2016年1月17日
+      div.hide
+        audio.audio.happy_m(src="./music/happy.mp3", controls, preload, loop)
+        audio.audio.sad_m(src="./music/sad.mp3", controls, preload, loop)
+        audio.audio.angry_m(src="./music/angry.mp3", controls, preload, loop)
+        audio.audio.fun_m(src="./music/fun.mp3", controls, preload, loop)
+        audio.audio.sound01_m(src="./music/sound01.mp3", controls, preload)
+        audio.audio.news(src="")
+      footer
+        p.help つかいかた
+        p.title 
+      div.mask
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
+  script(src="./scripts/main.js")

@@ -1,0 +1,1 @@
+$('#logo-audio')[0].play();
